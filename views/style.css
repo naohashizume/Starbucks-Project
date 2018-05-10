@@ -1,7 +1,37 @@
+#header {
+    position: fixed;
+    top:0;left:0;
+    width:100%;
+    height:6%;
+    color:white;
+    font-weight: lighter;
+    font-size:19px;
+    z-index: 999;
+    font-family:'Segoe UI';
+    background-color: rgba(0,0,0,0.4);
+    padding-left:10px;
+}
+
+#header2 {
+    position: fixed;
+    top:0;left:0;
+    width:100%;
+    height:6%;
+    color:white;
+    font-weight: lighter;
+    font-size:19px;
+    z-index: 999;
+    font-family:'Segoe UI';
+    background-color: rgba(0,0,0,0.4);
+    padding-left:10px;
+}
+
+
+
 .bg {
     position: absolute;
-    width:100vw;
-    height:100vh;
+    width:100%;
+    height:100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size:cover;
@@ -20,8 +50,8 @@
     position: absolute;
     top:0;
     left:0;
-    width:100vw;
-    height:100vh;
+    width:100%;
+    height:100%;
     margin:0;
 }
 
@@ -49,7 +79,7 @@ body{
     line-height: 100px;
     font-size: 30px;
     font-weight: bold;
-    font-family:'Helvetica';
+    font-family:'Segoe UI';
 }
 #starbucks{
     position: absolute;
@@ -358,9 +388,6 @@ form {
     box-shadow: 2px 2px 5px rgba(0,0,0,.5);
 }
 
-#body2 {
-    background-image: url(background1.jpg);
-}
 #sbucksnearme{
     position:absolute;
     bottom:0px;
