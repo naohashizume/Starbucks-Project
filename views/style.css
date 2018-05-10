@@ -229,15 +229,21 @@ form {
 }
 #search{
     position: absolute;
-    left:10px;
+    left:5%;
     width:70%;
 }
 #go{
-    height:100%;
+    height:60%;
     width:20%;
+    top:10%; right:2%;
     position: absolute;
-    right:0px;
-    top:0px;
+    background:#00704a;
+    color:white;
+    padding:0;
+    border-style: outset;
+    border-color:#00704a;
+    text-shadow: none;
+    display:inline-block;
 }
 #loginbox1{
     height:40%;
@@ -364,7 +370,6 @@ form {
 
 #nearme{
     top:0%;
-    left:0px;
     position: absolute;
     height:90%;
     width:25%;
@@ -373,10 +378,9 @@ form {
     display:block;
     font-size:17px;
     font-family: Verdana, Geneva, sans-serif;
-/*    transition: 2s;
-    transition-delay: 0.5s;*/
     transition-duration: .4s;
     background-color: rgba(255,255,255,.85);
+    z-index: 999;
 }
 
 .favItems {
@@ -393,3 +397,4 @@ form {
     bottom:0px;
     right:0px;
 }
+
