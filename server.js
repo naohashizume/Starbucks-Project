@@ -158,24 +158,28 @@ var hash_data = (data) => {
  */
 
 var UserNameCheck = (request, response, Accs) => {
-    if (request.body.NewUser.length <= 12 && request.body.NewUser.length >= 3 ) {
-        console.log(request.body.NewUser.length)
-        console.log(Accs.length)
-        for (i = 0; i < Accs.length; i++) {
-            console.log(Accs[i].user)
-            if (request.body.NewUser == Accs[i].user) {
-                response.render('index.hbs', {
-                    username:2
-                });
-                return 1
+    if (request.body.NewUser.match(/^[a-z0-9]+$/i)){
+        if (request.body.NewUser.length <= 12 && request.body.NewUser.length >= 3 ) {
+            for (i = 0; i < Accs.length; i++) {
+                //console.log(Accs[i].user)
+                if (request.body.NewUser == Accs[i].user) {
+                    response.render('index.hbs', {
+                        username:2
+                    });
+                    return 1
+                }
             }
+            return 0
         }
-        return 0
+        response.render('index.hbs', {
+            username: 1
+        });
+        return 2
     }
     response.render('index.hbs', {
-        username: 1
+        username: 6
     });
-    return 2
+    return 3
 };
 
 
@@ -232,7 +236,6 @@ app.post('/starbucksnearme', (request,response) => {
     longitude = request.body.longitude;
     latitude = request.body.latitude;
     maps.get_sturbuckses(latitude, longitude).then((response1) => {
-        console.log(response1.list_of_places);
 })
 });
 
@@ -246,6 +249,12 @@ app.post('/starbucksnearme', (request,response) => {
 app.post('/loginsearch', (request, response) => {
     place = request.body.search;
     maps.getAddress(place).then((coordinates) => {
+        displaySaved = ''
+        LoadAccfile()
+        var userdata = Accs[user_id]
+        for (var i = 0; i < userdata.saved.length; i++) {
+            displaySaved += `<div id=s${i} class="favItems"><a onclick="getMap(${userdata.saved[i]})"> ${userdata.saved[i]}</a></div>`
+        }
         console.log(coordinates);
         displayText = ' '
         if (coordinates.lat && coordinates.long){
@@ -255,6 +264,7 @@ app.post('/loginsearch', (request, response) => {
                 displayText += `<div id=d${i} class='favItems'><a href="#" onclick="getMap(\'${response1.list_of_places[i]}\'); currentSB=\'${response1.list_of_places[i]}\'"> ${response1.list_of_places[i]}</a></div>`
             }
             response.render('index2.hbs', {
+                savedSpots: displaySaved,
                 testvar: displayText,
                 coord: `<script>latitude = ${coordinates.lat}; longitude = ${coordinates.long};initMultPlaceMap()</script>`
             })
@@ -298,24 +308,37 @@ app.post('/storeuserdata', (request, response) => {
 })
 /**
  * populates the saved div with all the locations that you have saved to your account
- * @param {string} response - Renders the index2.hbs page with the variable displaySaved which is a list of all your saved locations
+ * @param {string} response - Renders the index2.hbs page with the variable displaySaved which is a list of all your saved locations and displayText that shows the SB based on IP 
  */
 app.post('/favdata', (request, response) => {
     displaySaved = ''
     LoadAccfile()
     var userdata = Accs[user_id]
     console.log(userdata.saved);
+    
 
     for (var i = 0; i < userdata.saved.length; i++) {
         displaySaved += `<div id=s${i} class="favItems"><a onclick="getMap(${userdata.saved[i]})"> ${userdata.saved[i]}</a></div>`
     }
-	response.render('index2.hbs', {
-        savedSpots: displaySaved
+    current_ip.request_coodrs().then((response1) => {
+        console.log(response1);
+        maps.get_sturbuckses(response1.lat,response1.lon).then((response2) => {
+            console.log(response2.list_of_places);
+            displayText = ' '
+            for (var i = 0; i < response2.list_of_places.length; i++) {
+                displayText += `<div id=d${i} class='favItems'><a href="#" onclick="getMap(\'${response2.list_of_places[i]}\'); currentSB=\'${response2.list_of_places[i]}\'"> ${response2.list_of_places[i]}</a></div>`
+            }
+            response.render('index2.hbs', {
+                savedSpots: displaySaved,
+                testvar: displayText,
+                coord: `<script>latitude = ${response1.lat}; longitude = ${response1.lon};initMultPlaceMap()</script>`
+            })
+        })
     })
 })
 
 app.get('/404', (request, response) => {
-    response.send({
+    response.send({ 
         error: 'Page not found'
     })
 })

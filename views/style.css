@@ -165,7 +165,7 @@ form {
     transform: translateY(4px);
 }
 
-#create {
+#create, #cancelBtn {
     right:0; left:0; bottom:0;
     margin: auto;
     padding:0;
@@ -175,6 +175,10 @@ form {
     color: #777;
     transition: 0.5s;
     cursor:pointer;
+}
+
+#candelBtn {
+    opacity: 0;
 }
 
 #mainpage{
@@ -243,11 +247,9 @@ form {
     font-family:'Segoe UI';
 }
 #go{
-    top:20%;
+    height:60%;
     width:20%;
-    height:26px;
-    right:7%;
-    line-height: 20px;
+    top:10%; right:2%;
     position: absolute;
     background:#00704a;
     color:white;
@@ -256,6 +258,7 @@ form {
     border-color:#00704a;
     text-shadow: none;
     font-family:'Segoe UI';
+    display:inline-block;
 }
 #loginbox1{
     height:40%;
@@ -456,3 +459,4 @@ form {
     bottom:0px;
     right:0px;
 }
+

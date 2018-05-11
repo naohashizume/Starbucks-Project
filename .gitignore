@@ -1,4 +1,6 @@
 node_modules/
 
 accounts.json
+
 places.json
+credentials.json
