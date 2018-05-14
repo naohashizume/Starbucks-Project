@@ -279,6 +279,7 @@ form {
     border-bottom:none;
 }
 
+
 #loginbox1{
     height:40%;
     width:30%;
@@ -386,6 +387,7 @@ ul {
     margin:0;
 }
 
+
 li {
     font-size: 18px;
     margin:0 8px;
@@ -400,9 +402,8 @@ li a {
     color:#000;
     display: block;
     position: relative;
-    z-index: 999;
-    float:right;
 }
+
 
 li a:before {
     content: '';
