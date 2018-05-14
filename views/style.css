@@ -248,7 +248,7 @@ form {
     font-family:'Segoe UI';
 }
 
-#go{
+#go, #edit{
     height:60%;
     width:20%;
     position: absolute;
@@ -442,7 +442,7 @@ li a:hover:after {
 }
 
 #savedloc{
-    top:0%;
+    top:6%;
     left:0px;
     position: absolute;
     height:0%;
@@ -452,7 +452,8 @@ li a:hover:after {
     overflow-y:scroll;
     transition-duration: 0.4s;
     font-size:18px;
-    font-family: Verdana, Geneva, sans-serif;
+    /*font-family: Verdana, Geneva, sans-serif; */
+    font-family: 'Segoe UI';
 }
 
 #map {
@@ -532,4 +533,5 @@ li a:hover:after {
     bottom:0px;
     right:0px;
 }
+
 
