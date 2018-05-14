@@ -251,7 +251,8 @@ form {
 #go{
     height:60%;
     width:20%;
-    top:20%; right:5%;
+
+    top:10%; right:2%;
     position: absolute;
     padding:0;
     text-shadow: none;
