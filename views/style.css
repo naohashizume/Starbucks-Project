@@ -152,7 +152,7 @@ form {
 #login:hover, #submitbutton:hover{
     background-color: #3e8e41;
     color: white;
-    transition-duration: .4s;
+    transition-duration: .3s;
     transition-delay: 0s;
     cursor:pointer;
 }
@@ -348,7 +348,7 @@ form {
     border: 0;
     padding: 0;
     background-color: transparent;
-    line-height: 21px;
+    line-height: 18px;
     border-bottom: 1px solid green;
     color: #777;
     outline: none;
