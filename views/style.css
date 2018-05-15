@@ -285,6 +285,7 @@ form {
     border-bottom:none;
 }
 
+
 #loginbox1{
     height:40%;
     width:30%;
@@ -383,6 +384,7 @@ form {
 ul {
     position: absolute;
     font-size: 0;
+    float: left;
     box-sizing: border-box;
     width:40%;
     padding:4px;
