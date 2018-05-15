@@ -340,7 +340,7 @@ form {
     display: none;
 }
 
-#newuser, #newpw, #confirmpw{
+#newuser, #useremail, #newpw, #confirmpw{
     position: relative;
     width: 80%;
     font-size: 100%;
@@ -348,7 +348,7 @@ form {
     border: 0;
     padding: 0;
     background-color: transparent;
-    line-height: 2rem;
+    line-height: 21px;
     border-bottom: 1px solid green;
     color: #777;
     outline: none;
@@ -529,7 +529,7 @@ li a:hover:after {
     border: solid rgba(255,255,255,1) 3px;
     margin: 13px;
     box-shadow: 2px 2px 5px rgba(0,0,0,.5);
-    font-family: 'Segoe UI'
+    font-family: 'Segoe UI';
 }
 
 #sbucksnearme{
@@ -538,4 +538,8 @@ li a:hover:after {
     right:0px;
 }
 
+a {
+    color:#00704a;
+    font-size:18px;
 
+}
