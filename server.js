@@ -316,6 +316,12 @@ app.post('/starbucksnearme', (request, response) => {
  */
 app.post('/loginsearch', (request, response) => {
     place = request.body.search;
+    if (place == ''){
+        response.render('index2.hbs', {
+            error: 2,
+            coord: `<script>latitude = ${49.2827}; longitude = ${123.1207}; z = ${19};initMultPlaceMap()</script>`
+        });
+    }
     maps.getAddress(place).then((coordinates) => {
         displaySaved = '';
         loadUserdata(logged_in.username).then(res => {
@@ -371,7 +377,8 @@ app.post('/storeuserdata', (request, response) => {
         if (logged_in.user == account[i].user) {
             console.log('push list');
             account[i].saved.push(request.body.location)
-            last_save = request.body.location
+            
+            _save = request.body.location
         }
     }
     console.log(account);
