@@ -1,5 +1,3 @@
-/*jshint esversion: 6 */
-
 const express = require('express');
 const fs = require('fs');
 const bodyParser = require('body-parser');
@@ -40,7 +38,6 @@ var con = mysql.createConnection({
     database: credentials.database,
     port: credentials.port
 });
-var Accs = [];
 
 var send_mail = () => {   
     options = email.mailOptions;
@@ -96,9 +93,11 @@ var checkLocations = (user, location) => {
             if (loc == '[]') {
                 resolve();
             } else {
+
                 reject();
             }
         });
+
     });
 };
 
@@ -380,8 +379,8 @@ app.post('/storeuserdata', (request, response) => {
     last_save = request.body.location;
     checkLocations(logged_in.username, request.body.location).then(res => {
         addLocations(logged_in.username, request.body.location);
-    }, rej => { console.log('failed');
-    });
+    }, rej => { console.log('failed'); }
+    );
 });
 /**
  * populates the saved div with all the locations that you have saved to your account
