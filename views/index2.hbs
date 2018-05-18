@@ -5,6 +5,7 @@
     <title>Web-App</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" type="image/png" href="starbucks.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrkIopyh3b866b5HgCZpRGT2CXlBGny_M&callback=initMap">
     </script>
 </head>
@@ -21,6 +22,20 @@
         </ul>
         <input type='submit' onclick="savelocation()" value="Save to Favorites" id='savecurrentloc'>
     </div>
+    <form action="/rating" method="post">
+        <fieldset class="rating">
+                <h3>Rating</h3>
+                <input type="radio" id="star5" name="rating" value="5"/><label class ="full" for="star5"></label>
+                <input type="radio" id="star4" name="rating" value="4"/><label class ="full" for="star4"></label>
+                <input type="radio" id="star3" name="rating" value="3"/><label class ="full" for="star3"></label>
+                <input type="radio" id="star2" name="rating" value="2"/><label class ="full" for="star2"></label>
+                <input type="radio" id="star1" name="rating" value="1"/><label class ="full" for="star1"></label>
+                <div id="footer">
+                <input type="text" name="comment" id="comment"/></br>
+                <input type="submit" value="send" id="send"/>
+                </div>
+        </fieldset>
+    </form>
     <form action="/favdata" method='post'>
         <div id="map">
             <div id='newmap'></div>
