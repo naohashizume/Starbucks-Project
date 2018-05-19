@@ -216,6 +216,7 @@ var AddUsr = (request, response) => {
             response.render('index.hbs', {
                 username: 0
             });
+            return 'success!'
         }
     });
 };
@@ -413,6 +414,7 @@ app.post('/storeuserdata', (request, response) => {
     }
     console.log(account);
     fs.writeFileSync('accounts.json', JSON.stringify(account));*/
+
     checkLocations(logged_in.username, request.body.location).then(res => {
         last_save = request.body.location;
         addLocations(logged_in.username, request.body.location);
@@ -434,6 +436,7 @@ app.post('/favdata', (request, response) => {
             displaySaved += `<div id=s${i} class="favItems"><a onclick="getMap(${saved_loc[i].location_id})"> ${saved_loc[i].location_id}</a><button id="del${i}" class="delButton" onclick="deleteFav(${i})">x</button></div>`;
         }
          displaySaved += `<div id=s${saved_loc.length} class="favItems"><a onclick="getMap(${last_save})"> ${last_save}</a><button id="del${i}" class="delButton" onclick="deleteFav(${i})">x</button></div>`;
+
 
         current_ip.request_coodrs().then((response1) => {
             console.log(response1);
@@ -477,6 +480,9 @@ module.exports = {
     server,
     LoadAccfile,
     loadUserdata,
-    checkLocations
+    checkLocations,
+    hash_data,
+    generateSalt,
+    AddUsr
 };
 
