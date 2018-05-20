@@ -65,7 +65,8 @@ body{
 
 #loginbox{
     height:80%;
-    width:25%;
+    width:20%;
+    min-width: 250px;
     position: absolute;
     left:0px;
     right:0px;
@@ -258,19 +259,17 @@ form {
     position: absolute;
     padding:0;
     margin:0;
-    text-shadow: none;
+    text-decoration: none;
     font-family:'Segoe UI';
     font-weight: normal;
     display:inline-block;
     border:none;
     outline:none;
-    color:green;
-    background-color:#ECECEC;
-    margin-bottom:10px;
+    background-color:rgba(60,179,113,1);
+    border-bottom:solid 1px rgba(60,179,113,1);
     transition: 0.5s;
     font-size:17px;
-    background-color: white;
-    border:1px solid green;
+    color:white;
 }
 
 #go {
@@ -278,37 +277,33 @@ form {
     position: absolute;
     right:3%;
     top:20%;
-    position: absolute;
     padding:0;
     margin:0;
-    text-shadow: none;
+    text-decoration: : none;
     font-family:'Segoe UI';
     font-weight: normal;
     display:inline-block;
     border:none;
     outline:none;
-    color:green;
-    background-color:#ECECEC;
-    margin-bottom:10px;
+    color:white;
     transition: 0.5s;
     font-size:17px;
-    background-color: white;
-    border:1px solid green;
+    background-color: rgba(60,179,113,1);
+    border-bottom:solid 1px rgba(60,179,113,1);
     z-index: 9999;
 }
 
 #go:active {
-    -ms-transform:translateY(3px);
-    -webkit-transform:translateY(3px);
-    transform:translateY(3px);
-    border-bottom:none;
+    -ms-transform:translateY(4px);
+    -webkit-transform:translateY(4px);
+    transform:translateY(4px);
     z-index: 9999;
 }
+
 #edit:active {
-    -ms-transform:translateY(3px);
-    -webkit-transform:translateY(3px);
-    transform:translateY(3px);
-    border-bottom:none;
+    -ms-transform:translateY(4px);
+    -webkit-transform:translateY(4px);
+    transform:translateY(4px);
     z-index: 9999;
 }
 
@@ -548,7 +543,7 @@ li a:hover:after {
     display:block;
     font-size:18px;
     transition-duration: .4s;
-    background-image:url("nearmeBG2.jpg");
+    background-image:url("nearmeBG.jpg");
     background-size: cover;
     background-position: center;
     z-index: 999;
