@@ -20,6 +20,7 @@
                 <a><input type="submit" value="Back to Search" id='Searchlocation'></a>
             </li>
         </ul>
+    <form action="/favdata" method='post'>
         <input type='submit' onclick="savelocation()" value="Save to Favorites" id='savecurrentloc'>
     </div>
     <form action="/rating" method="post">
@@ -45,7 +46,7 @@
         <div id="map">
             <div id='newmap'></div>
         </div>
-    </form>
+        </form>
     <div id="nearme">
         <div id="searchbox">
             <form action='/loginsearch' method='post'>
