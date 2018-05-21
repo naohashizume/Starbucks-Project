@@ -202,7 +202,7 @@ i {
     cursor:pointer;
 }
 
-#candelBtn {
+#cancelBtn {
     opacity: 0;
 }
 
@@ -741,6 +741,7 @@ h4 {
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
 .rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+
 
 
 h2 {
