@@ -1,8 +1,5 @@
-node_modules/
+nnode_modules/
 
-accounts.json
 
 places.json
-credentials.json
 coverage/
-package-lock.json
