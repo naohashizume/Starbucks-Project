@@ -6,7 +6,7 @@ Developed by:
 	Edmund Yao
 	Henry Nguyen
 	Jason Huang
-	Nao Hashizumi
+	Nao Hashizume
 	Matthew Harrison
 
 This is the Final project for the five week Term.
